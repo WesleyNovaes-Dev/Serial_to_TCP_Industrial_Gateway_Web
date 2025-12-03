@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🌐 ScaleConnect Web — Painel de Configuração e Documentação
 
-# Run and deploy your AI Studio app
+Este repositório contém o **site oficial do ScaleConnect**, a plataforma web criada para apresentar, documentar e demonstrar o funcionamento da solução industrial baseada em ESP32 desenvolvida para integração de **balanças industriais RS-232/USB** com sistemas corporativos e ERPs.
 
-This contains everything you need to run your app locally.
+O objetivo deste site é oferecer:
+- 🖥️ **Apresentação visual** do projeto e sua aplicação na Indústria 4.0  
+- 📘 **Documentação clara** sobre instalação, configuração e uso  
+- 🌐 **Demonstração do fluxo operacional** (rede, gateway, leitura serial, envio TCP)  
+- 📡 **Explicação técnica do firmware** e arquitetura do sistema
 
-View your app in AI Studio: https://ai.studio/apps/bundled/react-example
+Este site é apenas a camada de apresentação.  
+Para acessar o **código-fonte do firmware do ESP32** (gateway IoT), visite:
 
-## Run Locally
+👉 **Repositório oficial do ESP32 (ScaleConnect Gateway):**  
+https://github.com/SEU-USUARIO/ScaleConnect-ESP32  
 
-**Prerequisites:**  Node.js
+> O firmware inclui suporte a RS-232 via MAX3232, TCP/IP via Wi-Fi ou W5500, reconexão automática, múltiplos clientes TCP, modo AP de configuração, página web embarcada, filtragem inteligente de linha, logs em tempo real e muito mais.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tecnologias Utilizadas no Site
+- **React + TypeScript**
+- **CSS customizado com tema dark industrial**
+- **Scroll tracking e SPA responsiva**
+- **Design otimizado para apresentação técnica**
+
+---
+
+## 📄 Licença
+Este projeto faz parte da solução ScaleConnect e pode ser utilizado como referência para documentação e integração.
+
+---
+
+📬 Desenvolvido por **Wesley Davi Zanon Novaes**.
