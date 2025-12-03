@@ -1,3 +1,7 @@
+/* ========================================
+  CSS ATUALIZADO (Mantendo o estilo moderno)
+  ========================================
+*/
 :root {
   --background-dark: #0D1117;
   --background-light: #161B22;
@@ -156,7 +160,8 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 1)), url('https://images.unsplash.com/photo-1554486858-69a1b32998d2?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+  /* Imagem de fundo atualizada para algo mais "híbrido/conectado" se desejar */
+  background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 1)), url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
 }
 
 .hero-content h1 {
@@ -195,6 +200,8 @@ p {
   font-size: 3rem;
   color: var(--primary-blue);
   margin-bottom: 1rem;
+  /* Permite ícones combinados como "🌐+🔌" */
+  letter-spacing: -5px; 
 }
 
 .feature-card h3 {
