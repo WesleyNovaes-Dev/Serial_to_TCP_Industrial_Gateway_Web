@@ -2,6 +2,9 @@
 
 Este repositório contém o **site oficial do ScaleConnect**, a plataforma web criada para apresentar, documentar e demonstrar o funcionamento da solução industrial baseada em ESP32 desenvolvida para integração de **balanças industriais RS-232/USB** com sistemas corporativos e ERPs.
 
+👉 **Link do Site:**  
+https://github.com/WesleyNovaes-Dev/Serial_to_TCP_Industrial_Gateway_for_Weighing_Systems
+
 O objetivo deste site é oferecer:
 - 🖥️ **Apresentação visual** do projeto e sua aplicação na Indústria 4.0  
 - 📘 **Documentação clara** sobre instalação, configuração e uso  
