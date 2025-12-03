@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css'
 
+// =============================
+// COMPONENTE PRINCIPAL (App)
+// =============================
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
@@ -43,8 +47,7 @@ const App = () => {
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      // FIX: Cast the result of querySelector to HTMLElement to access offsetHeight.
-      const headerOffset = (document.querySelector('.header') as HTMLElement)?.offsetHeight || 70;
+      const headerOffset = document.querySelector('.header').offsetHeight || 70;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -76,12 +79,15 @@ const App = () => {
   );
 };
 
+// =============================
+// CABEÇALHO (Header)
+// =============================
 const Header = ({ menuOpen, toggleMenu, onLinkClick, activeSection }) => {
   const navLinks = [
     { href: '#inicio', label: 'Início' },
     { href: '#projeto', label: 'O Projeto' },
     { href: '#comousar', label: 'Como Usar' },
-    { href: '#configuracao-detalhada', label: 'Configuração Detalhada' },
+    { href: '#configuracao-detalhada', label: 'Configuração' },
     { href: '#especificacoes', label: 'Especificações' },
     { href: '#sobrenos', label: 'Sobre Nós' },
     { href: '#contato', label: 'Contato' },
@@ -114,41 +120,47 @@ const Header = ({ menuOpen, toggleMenu, onLinkClick, activeSection }) => {
   );
 };
 
+// =============================
+// SEÇÃO INICIAL (Hero)
+// =============================
 const Hero = () => (
   <section id="inicio">
     <div className="container hero-content">
-      <h1>Conecte. Automatize. Otimize.</h1>
-      <p>Modernize suas balanças seriais e integre-as à sua rede com nossa solução plug-and-play. Elimine erros manuais e ganhe eficiência.</p>
-      <a href="#projeto" className="btn">Saiba Mais</a>
+      <h1>Conectividade Híbrida. Máxima Confiabilidade.</h1>
+      <p>Modernize suas balanças com nossa solução de conectividade dupla. <strong>Wi-Fi e Ethernet trabalhando juntos</strong> para garantir que seus dados nunca parem de fluir, mesmo se uma conexão falhar.</p>
+      <a href="#projeto" className="btn">Conheça a Tecnologia</a>
     </div>
   </section>
 );
 
+// =============================
+// SEÇÃO DO PROJETO (ProjectInfo)
+// =============================
 const ProjectInfo = () => (
   <section id="projeto">
     <div className="container">
-      <h2>O Desafio da Conectividade Industrial</h2>
-      <p>Dispositivos de medição legados, como balanças industriais, frequentemente carecem de conectividade, dependendo de portas seriais que exigem inserção manual de dados em sistemas de gestão. Este processo é lento, ineficiente e propenso a erros, representando uma barreira para a modernização.</p>
+      <h2>O Desafio: Conexão sem Interrupções</h2>
+      <p>Em ambientes industriais e comerciais, a perda de conexão significa perda de dados e paradas na produção. Nosso dispositivo resolve isso oferecendo uma solução de conectividade robusta que elimina o ponto único de falha das balanças seriais legadas.</p>
       <div className="project-grid">
         <FeatureCard 
-          icon="🔌" 
-          title="Fácil Instalação" 
-          description="Conecte e configure em minutos. Nossa solução é plug-and-play, projetada para integração imediata sem complicações." 
+          icon="🌐+🔌" 
+          title="Conexão Híbrida Redundante" 
+          description="Usa Wi-Fi e Cabo de Rede (RJ45) simultaneamente. Se uma conexão cair, a outra assume instantaneamente, garantindo alta disponibilidade." 
+        />
+        <FeatureCard 
+          icon="⚡" 
+          title="Failover Automático" 
+          description="O sistema detecta falhas e alterna entre Wi-Fi e Ethernet sem intervenção manual, mantendo o fluxo de dados contínuo." 
         />
         <FeatureCard 
           icon="💻" 
-          title="Integração com ERP" 
-          description="Transmita dados de pesagem diretamente para seu sistema ERP, automatizando processos e garantindo a precisão das informações." 
-        />
-        <FeatureCard 
-          icon="💰" 
-          title="Baixo Custo" 
-          description="Uma alternativa econômica à substituição de equipamentos caros, democratizando o acesso às vantagens da Indústria 4.0." 
+          title="Integração Direta com ERP" 
+          description="Transmita dados de pesagem diretamente para seu sistema de gestão, automatizando processos e eliminando erros de digitação." 
         />
          <FeatureCard 
-          icon="🌐" 
-          title="Configuração Web" 
-          description="Interface de configuração web intuitiva, acessível por qualquer navegador, para um gerenciamento de rede simples e rápido." 
+          icon="🎛️" 
+          title="Nova Interface Web" 
+          description="Painel de controle moderno e intuitivo, acessível pelo navegador, para monitorar o status das duas conexões e configurar o dispositivo." 
         />
       </div>
     </div>
@@ -163,31 +175,33 @@ const FeatureCard = ({ icon, title, description }) => (
   </div>
 );
 
-
+// =============================
+// SEÇÃO COMO USAR (HowToUse)
+// =============================
 const HowToUse = () => (
   <section id="comousar">
     <div className="container">
-      <h2>Instalação em 3 Passos Simples</h2>
+      <h2>Instalação Híbrida Simplificada</h2>
       <div className="how-to-use-timeline">
         <div className="timeline-item">
           <div className="timeline-content">
             <span className="step">Passo 1</span>
             <h3>Conecte o Hardware</h3>
-            <p>Conecte o dispositivo à sua balança usando a porta serial e ligue-o a uma fonte de energia.</p>
+            <p>Conecte o dispositivo à porta serial da sua balança e ligue-o à energia. Para máxima confiabilidade, conecte também um cabo de rede (RJ45) à sua infraestrutura.</p>
           </div>
         </div>
         <div className="timeline-item">
           <div className="timeline-content">
              <span className="step">Passo 2</span>
             <h3>Configure a Rede</h3>
-            <p>Use seu celular ou computador para se conectar à rede Wi-Fi do dispositivo e acesse a interface web para configurar sua rede local.</p>
+            <p>Acesse a nova interface web pelo seu navegador. Configure sua rede Wi-Fi como conexão primária ou secundária. O cabo de rede é detectado automaticamente.</p>
           </div>
         </div>
         <div className="timeline-item">
           <div className="timeline-content">
              <span className="step">Passo 3</span>
-            <h3>Receba os Dados</h3>
-            <p>Uma vez conectado, o dispositivo começa a transmitir os dados de pesagem pela sua rede, pronto para ser integrado ao seu sistema.</p>
+            <h3>Operação Contínua</h3>
+            <p>O dispositivo gerencia as conexões. Ele usará a melhor conexão disponível e alternará automaticamente em caso de falha, garantindo que os dados da balança sempre cheguem ao seu sistema.</p>
           </div>
         </div>
       </div>
@@ -195,124 +209,119 @@ const HowToUse = () => (
   </section>
 );
 
+// =============================
+// CONFIGURAÇÃO DETALHADA (DetailedConfig)
+// =============================
 const DetailedConfig = () => (
   <section id="configuracao-detalhada">
     <div className="container">
-      <h2>Configuração Detalhada</h2>
-      <p>Siga este guia passo a passo para configurar seu dispositivo ScaleConnect e integrá-lo à sua rede.</p>
+      <h2>Guia de Configuração Híbrida</h2>
+      <p>Siga este guia para aproveitar ao máximo a redundância de rede do seu dispositivo ScaleConnect.</p>
       <div className="config-grid">
         <div className="config-step">
-          <h3>Passo 1: Conexão Inicial (Modo Ponto de Acesso)</h3>
-          <p>Ao ser ligado pela primeira vez, o dispositivo cria sua própria rede Wi-Fi para configuração inicial. Este é o Modo Ponto de Acesso (AP).</p>
+          <h3>1. Conexão Física (A Base da Redundância)</h3>
+          <p>Para ativar a funcionalidade híbrida, a conexão física é crucial.</p>
           <ul>
-            <li>Procure por redes Wi-Fi em seu celular ou computador.</li>
-            <li>Conecte-se à rede com o nome (SSID): <strong>ScaleConnect</strong>.</li>
-            <li>Nenhuma senha é necessária para esta conexão inicial.</li>
+            <li><strong>Porta Serial:</strong> Conecte à sua balança.</li>
+            <li><strong>Porta Ethernet (RJ45):</strong> Conecte um cabo de rede do dispositivo ao seu switch ou roteador. Esta conexão é geralmente prioritária por sua estabilidade.</li>
+            <li><strong>Alimentação:</strong> Ligue o dispositivo à energia.</li>
           </ul>
         </div>
 
         <div className="config-step">
-          <h3>Passo 2: Acessando a Interface Web</h3>
-          <p>Uma vez conectado à rede "ScaleConnect", abra seu navegador de internet.</p>
+          <h3>2. Acessando a Nova Interface Web</h3>
+          <p>Inicialmente, o dispositivo cria um ponto de acesso Wi-Fi para configuração.</p>
           <ul>
-            <li>Digite o seguinte endereço IP na barra de endereços: <code>192.168.4.1</code></li>
-            <li>Você será solicitado a inserir uma senha para acessar as configurações.</li>
-            <li>A senha padrão é: <code>123456</code></li>
+            <li>Conecte-se à rede Wi-Fi: <strong>ScaleConnect-Config</strong>.</li>
+            <li>Abra o navegador e acesse: <code>192.168.4.1</code></li>
+            <li>A nova interface gráfica será carregada, mostrando o status das conexões (Wi-Fi e Cabo).</li>
           </ul>
         </div>
 
         <div className="config-step">
-          <h3>Passo 3: Escolhendo o Modo de Rede</h3>
-          <p>Na interface, você poderá escolher como o dispositivo se conectará permanentemente.</p>
+          <h3>3. Configurando o Wi-Fi (Backup ou Principal)</h3>
+          <p>Na interface web, vá para a seção de configurações de rede.</p>
           <ul>
-            <li><strong>Modo Cliente (Recomendado):</strong> O dispositivo se conecta à sua rede Wi-Fi existente (ex: a rede do seu escritório ou fábrica). Você precisará selecionar o nome da sua rede (SSID) e inserir a senha dela. Esta opção integra o dispositivo à sua infraestrutura local.</li>
-            <li><strong>Modo Ponto de Acesso:</strong> O dispositivo continua a funcionar como um roteador Wi-Fi independente. Use esta opção se não houver uma rede Wi-Fi disponível no local. Seus sistemas terão que se conectar diretamente à rede "ScaleConnect" para receber os dados.</li>
+            <li>Selecione sua rede Wi-Fi principal na lista.</li>
+            <li>Insira a senha e salve.</li>
+            <li>O dispositivo tentará se conectar. Mesmo com o cabo conectado, o Wi-Fi fica configurado e pronto para assumir como backup.</li>
           </ul>
         </div>
         
         <div className="config-step">
-            <h3>Passo 4: Salvar, Reiniciar e Conectar</h3>
-            <p>Após escolher o modo e inserir os dados (se aplicável), salve as configurações. O dispositivo irá reiniciar.</p>
-            <ul>
-                <li>Aguarde alguns instantes. Os LEDs no dispositivo indicarão o status da conexão.</li>
-                <li>Se configurado como Cliente, ele tentará se conectar à sua rede Wi-Fi. Um LED de status ficará aceso continuamente após a conexão bem-sucedida.</li>
-            </ul>
-        </div>
-
-        <div className="config-step">
-            <h3>Passo 5: Acessando pelo Novo IP</h3>
-            <p>Se você configurou o Modo Cliente, seu roteador atribuirá um novo endereço IP ao dispositivo. Para acessá-lo novamente:</p>
-            <ul>
-                <li>Acesse a página de administração do seu roteador para encontrar a lista de dispositivos conectados e identificar o IP do ScaleConnect.</li>
-                <li>Ou, use um aplicativo de escaneamento de rede em seu celular ou computador.</li>
-                <li>Acesse a interface de configuração usando este <strong>novo IP</strong>. A senha de acesso (<code>123456</code>) permanece a mesma.</li>
-            </ul>
-        </div>
-
-        <div className="config-step">
-          <h3>Passo 6: Configurando a Transmissão de Dados</h3>
-          <p>Com o dispositivo na sua rede, configure como os dados da balança serão enviados.</p>
+          <h3>4. Monitoramento e Failover</h3>
+          <p>Uma vez configurado, o dispositivo opera autonomamente.</p>
           <ul>
-            <li><strong>Servidor TCP (Socket):</strong> O dispositivo escuta em uma porta de rede específica (ex: porta 8080). Seu sistema ERP ou software personalizado pode se conectar diretamente ao IP do dispositivo e a essa porta para receber um fluxo contínuo de dados de pesagem. É uma conexão direta e de baixa latência.</li>
-            <li><strong>API (HTTP POST):</strong> O dispositivo envia os dados de pesagem para um endereço web (endpoint de API) que você especificar. A cada nova pesagem, ele faz uma requisição HTTP POST com os dados em um formato estruturado (ex: JSON). Ideal para integração com sistemas modernos baseados na web.</li>
+            <li><strong>Status na Interface:</strong> O painel web mostra em tempo real qual conexão está ativa (Cabo ou Wi-Fi) e o status da outra.</li>
+            <li><strong>Teste de Failover:</strong> Para testar, você pode desconectar o cabo de rede. O sistema detectará a falha e mudará para o Wi-Fi automaticamente, sem perda de dados significativa. Ao reconectar o cabo, ele retorna à conexão prioritária.</li>
           </ul>
+        </div>
+
+        <div className="config-step">
+            <h3>5. Integração de Dados</h3>
+            <p>Configure seu sistema para receber os dados do dispositivo.</p>
+            <ul>
+                <li>O dispositivo terá um endereço IP na sua rede (atribuído via DHCP ou fixo, conforme sua configuração).</li>
+                <li>Configure seu software ERP para "escutar" os dados de pesagem vindos deste IP, seja via conexão <strong>Socket TCP</strong> direta ou recebendo <strong>HTTP POSTs</strong> do dispositivo.</li>
+            </ul>
         </div>
       </div>
     </div>
   </section>
 );
 
+// =============================
+// ESPECIFICAÇÕES TÉCNICAS (TechnicalSpecs)
+// =============================
 const TechnicalSpecs = () => (
   <section id="especificacoes">
     <div className="container">
-      <h2>Especificações Técnicas</h2>
+      <h2>Especificações Técnicas Híbridas</h2>
       <div className="specs-grid">
         <div className="spec-item">
-          <strong>Conectividade</strong>
-          <span>Wi-Fi 802.11 b/g/n</span>
+          <strong>Conectividade Dupla</strong>
+          <span>Wi-Fi 802.11 b/g/n + Ethernet (RJ45) 10/100 Mbps</span>
         </div>
         <div className="spec-item">
-          <strong>Interface Física</strong>
-          <span>Serial RS232 (DB9) / USB</span>
+          <strong>Redundância</strong>
+          <span>Failover automático entre Wi-Fi e Cabo</span>
+        </div>
+        <div className="spec-item">
+          <strong>Interface Física de Dados</strong>
+          <span>Serial RS232 (DB9)</span>
+        </div>
+        <div className="spec-item">
+          <strong>Interface de Configuração</strong>
+          <span>Painel Web Moderno e Responsivo (acessível via navegador)</span>
         </div>
         <div className="spec-item">
           <strong>Protocolos de Rede</strong>
-          <span>TCP/IP, DHCP, DNS</span>
+          <span>TCP/IP, DHCP, DNS, HTTP</span>
         </div>
         <div className="spec-item">
           <strong>Segurança Wi-Fi</strong>
           <span>WPA2-Pessoal e WPA2-Enterprise</span>
         </div>
         <div className="spec-item">
-          <strong>Gerenciamento</strong>
-          <span>Interface Web embarcada para configuração</span>
-        </div>
-        <div className="spec-item">
           <strong>Alimentação</strong>
-          <span>5V DC (Micro-USB ou P4)</span>
+          <span>5V DC (Micro-USB ou Conector P4)</span>
         </div>
         <div className="spec-item">
           <strong>Dimensões</strong>
-          <span>8cm x 5cm x 2.5cm</span>
+          <span>Aprox. 8cm x 5cm x 2.5cm</span>
         </div>
         <div className="spec-item">
-          <strong>Consumo de Energia</strong>
-          <span>&lt; 2W</span>
-        </div>
-        <div className="spec-item">
-          <strong>Indicadores LED</strong>
-          <span>Alimentação, Conexão Wi-Fi, Atividade Serial</span>
-        </div>
-        <div className="spec-item">
-          <strong>Firmware</strong>
-          <span>Atualizável via OTA (Over-The-Air)</span>
+          <strong>Indicadores</strong>
+          <span>LEDs de Status (Pwr, Wi-Fi, Link Ethernet, Dados)</span>
         </div>
       </div>
     </div>
   </section>
 );
 
-
+// =============================
+// SOBRE O CRIADOR (AboutUs) - Mantido igual
+// =============================
 const AboutUs = () => {
     const calculateAge = (birthDateString) => {
       const birthDate = new Date(birthDateString);
@@ -343,7 +352,7 @@ const AboutUs = () => {
             </div>
             <div className="mission-statement">
               <h4>Nossa Missão</h4>
-              <p>Este projeto nasceu de uma visão acadêmica com o objetivo de tornar a automação industrial acessível. Acredito que a tecnologia pode simplificar processos e impulsionar o crescimento de pequenas e médias empresas. Sou apaixonado por inovação e dedicado a criar soluções robustas e fáceis de usar.</p>
+              <p>Este projeto nasceu de uma visão acadêmica com o objetivo de tornar a automação industrial acessível e confiável. Acredito que a tecnologia híbrida é a chave para garantir que processos críticos, como a pesagem, nunca parem, impulsionando a eficiência de pequenas e médias empresas.</p>
             </div>
           </div>
         </div>
@@ -351,11 +360,14 @@ const AboutUs = () => {
     );
 };
 
+// =============================
+// CONTATO (Contact) - Mantido igual
+// =============================
 const Contact = () => (
   <section id="contato">
     <div className="container contact-content">
       <h2>Entre em Contato</h2>
-      <p>Tem alguma dúvida ou interesse em nosso produto? Fale comigo.</p>
+      <p>Tem alguma dúvida ou interesse em nossa solução híbrida? Fale comigo.</p>
        <div className="contact-links">
         <a href="mailto:wesleyzanon.dev@gmail.com" className="contact-link">📧 Email Principal</a>
         <a href="mailto:wesleyzanon17@gmail.com" className="contact-link">✉️ Email Secundário</a>
@@ -366,6 +378,9 @@ const Contact = () => (
   </section>
 );
 
+// =============================
+// RODAPÉ (Footer) - Mantido igual
+// =============================
 const Footer = () => (
   <footer className="footer">
     <div className="container">
@@ -374,5 +389,8 @@ const Footer = () => (
   </footer>
 );
 
+// =============================
+// RENDERIZAÇÃO
+// =============================
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
