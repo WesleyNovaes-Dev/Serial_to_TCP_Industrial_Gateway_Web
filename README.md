@@ -12,7 +12,7 @@ Este site é apenas a camada de apresentação.
 Para acessar o **código-fonte do firmware do ESP32** (gateway IoT), visite:
 
 👉 **Repositório oficial do ESP32 (ScaleConnect Gateway):**  
-https://github.com/SEU-USUARIO/ScaleConnect-ESP32  
+https://github.com/SEU-USUARIO/ScaleConnect-ESP32  ](https://github.com/WesleyNovaes-Dev/Serial_to_TCP_Industrial_Gateway_for_Weighing_Systems.git
 
 > O firmware inclui suporte a RS-232 via MAX3232, TCP/IP via Wi-Fi ou W5500, reconexão automática, múltiplos clientes TCP, modo AP de configuração, página web embarcada, filtragem inteligente de linha, logs em tempo real e muito mais.
 
@@ -26,9 +26,19 @@ https://github.com/SEU-USUARIO/ScaleConnect-ESP32
 
 ---
 
-## 📄 Licença
-Este projeto faz parte da solução ScaleConnect e pode ser utilizado como referência para documentação e integração.
+## 👨‍💻 Autor
+
+**Wesley Davi Zanon Novaes**  
+Engenharia de Computação – Desenvolvimento Embarcado  
+Sorocaba – SP, Brasil  
+Formado: Dez/2025.
+
+📧 E-mail: **wesleyzanon.dev@gmail.com**  
+📱 WhatsApp: **(11) 96583-5656**  
+🌐 LinkedIn: *https://www.linkedin.com/in/wesleynovaes](https://www.linkedin.com/in/wesley-novaes-641577193/*  
 
 ---
 
-📬 Desenvolvido por **Wesley Davi Zanon Novaes**.
+## ⭐ Se este projeto te ajudou...
+
+Deixe uma **estrela ⭐ no repositório**. Isso ajuda muito!
